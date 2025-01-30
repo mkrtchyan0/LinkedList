@@ -1,4 +1,5 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MyLinkedList
 {
@@ -6,20 +7,14 @@ namespace MyLinkedList
     {
         static void Main(string[] args)
         {
-            LinkedList_<int> linkedList = new LinkedList_<int>();
+            LinkedList_<int> myList = new LinkedList_<int>();
 
-            linkedList.AddFirst(5);
-            linkedList.AddFirst(4);
-            linkedList.AddFirst(3);
-            linkedList.AddFirst(2);
-            linkedList.AddFirst(1);
-
-            linkedList.AddLast(1);
-            linkedList.AddLast(2);
-            linkedList.AddLast(3);
-            linkedList.AddLast(4);
-            linkedList.AddLast(5);
-            linkedList.AddLast(5);
+            myList.AddLast(1);
+            myList.AddLast(2);
+            myList.AddLast(3);
+            myList.AddLast(4);
+            myList.AddLast(5);
+            myList.AddLast(6);
         }
     }
 }
