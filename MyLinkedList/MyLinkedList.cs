@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyLinkedList
+﻿namespace MyLinkedList
 {
     public class Node
     {
@@ -21,6 +14,7 @@ namespace MyLinkedList
     public class LinkedList_<T>
     {
         private Node head;
+        private Node copyOfHead;
         public LinkedList_()
         {
             head = null;
@@ -30,7 +24,7 @@ namespace MyLinkedList
             Node node = new Node(value);
             if (head == null)
             {
-                head =node;
+                head = node;
                 return;
             }
             var current = head;
@@ -39,6 +33,30 @@ namespace MyLinkedList
                 current = current.Next;
             }
             current.Next = node;
+        }
+        public void AddFirst(T value)
+        {
+            copyOfHead = head;
+            Node node = new Node(value);
+
+            head = node;
+            head.Next = copyOfHead;
+        }
+        public void RemoveFirst()
+        {
+            head = copyOfHead;
+        }
+        public void AddAfter(object node, T value)
+        {
+            Node newNode = new Node(value);
+            var current = head;
+            while (current.Data != node)
+            {
+                current = current.Next;
+            }
+            current.Next = newNode;
+            current = current.Next;
+            newNode.Next = current;
         }
     }
 }

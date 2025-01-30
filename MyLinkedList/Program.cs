@@ -11,10 +11,12 @@ namespace MyLinkedList
 
             myList.AddLast(1);
             myList.AddLast(2);
-            myList.AddLast(3);
             myList.AddLast(4);
             myList.AddLast(5);
-            myList.AddLast(6);
+            myList.AddAfter(2, 3);
+            myList.AddLast(5);
+            myList.AddFirst(6);
+            myList.RemoveFirst();
         }
     }
 }
